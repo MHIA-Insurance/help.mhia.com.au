@@ -1,0 +1,121 @@
+.section {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 430px;
+  padding: 0 12px;
+  margin: 0 auto;
+  position: relative;
+}
+
+:root {
+  /* Colors */
+  --color-black: hsl(0, 0%, 0%);
+  --color-lightgrey: hsl(240, 24%, 96%);
+  --color-darkgrey: hsl(240, 6%, 83%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-icon-grey: hsl(240, 2%, 56%);
+  --color-icon-red: hsl(6, 80%, 58%);
+  --color-icon-green: hsl(121, 45%, 58%);
+  --color-icon-blue: hsl(219, 91%, 58%);
+  /* Fonts */
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Red Hat Display", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+}
+
+html {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-lightgrey);
+  color: var(--color-black);
+  position: relative;
+  overflow-x: hidden !important;
+  min-height: 100dvh;
+}
+
+p {
+  line-height: 1.4rem;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-darkgrey);
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black);
+}
+nav li {
+  display: flex;
+  border-top: 1px solid var(--color-lightgrey);
+  background-color: var(--color-white);
+}
+nav li::marker {
+  content: "";
+}
+nav li:first-of-type {
+  border-top: none;
+  border-radius: 8px 8px 0 0;
+}
+nav li:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+nav li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  text-decoration: none;
+}
+nav li a:visited {
+  color: inherit;
+}
+nav li a i {
+  background-color: var(--color-black);
+  font-size: 0.95em;
+  color: var(--color-white);
+  padding: 0.25rem;
+  border-radius: 6px;
+  margin-right: 0.75rem;
+  min-width: 1.5rem;
+  width: 1.5rem;
+  max-width: 1.5rem;
+}
+nav li:hover, nav li:focus-visible {
+  background-color: var(--color-darkgrey);
+}
+nav .fa-key {
+  background-color: var(--color-icon-blue);
+}
+nav .fa-lock-open {
+  background-color: var(--color-icon-green);
+}
+nav .fa-headset {
+  background-color: var(--color-icon-red);
+}/*# sourceMappingURL=main.css.map */

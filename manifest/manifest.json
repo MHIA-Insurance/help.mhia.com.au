@@ -1,0 +1,22 @@
+{
+    "name": "MHIA Help Centre",
+    "short_name": "Help Centre",
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "theme_color": "#00558a",
+    "description": "MHIA Help Centre App",
+    "icons": [
+      {
+        "src": "/img/pwa/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/img/pwa/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      }
+    ]
+  }
