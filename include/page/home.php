@@ -12,6 +12,12 @@
                     <a href="https://incidents.cmsia.info/AddEvent.aspx" target="_blank"><i class="fa-solid fa-headset"></i>Submit a ticket</a>
                 </li>
             </ul>
+            <p class="nav-ul-caption nav-ul-caption-pre">System status</p>
+            <ul>
+                <li>
+                    <a href="https://status.mhia.com.au/" target="_blank"><i class="fa-solid fa-plug-circle-xmark"></i>Current outages</a>
+                </li>
+            </ul>
             <p class="nav-ul-caption nav-ul-caption-pre">Above options not working?</p>
             <ul>
                 <li>

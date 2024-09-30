@@ -57,6 +57,15 @@ h1{
     font-weight: 700;
 }
 
+a {
+    color: var(--color-icon-blue);
+    text-decoration: none;
+    
+    &:visited {
+        color: var(--color-icon-blue);
+    }
+}
+
 nav {
 
     ul {
@@ -100,7 +109,7 @@ nav {
                 padding: 0.35rem 0.5rem;
                 text-decoration: none;
                 color: inherit;
-    
+
                 &:visited {
                     color: inherit;
                 }
@@ -146,7 +155,7 @@ nav {
     line-height: 0.85rem;
     color: var(--color-darkgrey);
     margin-top: 0.4rem;
-    margin-left: 1rem;
+    margin-left: 0.6rem;
     
     &-pre {
         text-transform: uppercase;
