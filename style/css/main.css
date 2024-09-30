@@ -16,9 +16,9 @@
   --color-darkgrey: hsl(240, 6%, 83%);
   --color-white: hsl(0, 0%, 100%);
   --color-icon-grey: hsl(240, 2%, 56%);
-  --color-icon-red: hsl(6, 80%, 58%);
-  --color-icon-green: hsl(121, 45%, 58%);
-  --color-icon-blue: hsl(219, 91%, 58%);
+  --color-icon-red: hsl(6, 90%, 58%);
+  --color-icon-green: hsl(121, 55%, 58%);
+  --color-icon-blue: hsl(219, 95%, 58%);
   /* Fonts */
   --font-body: "Roboto", sans-serif;
   --font-heading: "Red Hat Display", sans-serif;
