@@ -145,6 +145,7 @@ nav ul .fa-phone {
   color: var(--color-darkgrey);
   margin-top: 0.4rem;
   margin-left: 0.6rem;
+  margin-right: 0.6rem;
 }
 .nav-ul-caption-pre {
   text-transform: uppercase;
