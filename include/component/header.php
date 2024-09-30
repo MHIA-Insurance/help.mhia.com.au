@@ -1,6 +1,8 @@
 <div class="section">
     <div class="container">
-        <h1>MHIA Help Centre</h1>
-        <p>Use this tool from anywhere!</p>
+        <span class="header-span">
+            <img src="/img/brand/logo.png" width="55" height="55">
+            <h1>Help Centre</h1>
+        </span>
     </div>
 </div>

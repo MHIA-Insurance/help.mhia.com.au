@@ -12,8 +12,9 @@
 :root {
   /* Colors */
   --color-black: hsl(0, 0%, 0%);
+  --color-darkgrey: hsl(240, 6%, 50%);
+  --color-grey: hsl(240, 6%, 83%);
   --color-lightgrey: hsl(240, 24%, 96%);
-  --color-darkgrey: hsl(240, 6%, 83%);
   --color-white: hsl(0, 0%, 100%);
   --color-icon-grey: hsl(240, 2%, 56%);
   --color-icon-red: hsl(6, 90%, 58%);
@@ -37,7 +38,7 @@ img {
 }
 
 html {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.15;
   position: relative;
@@ -59,63 +60,101 @@ p {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  border-bottom: 2px solid var(--color-darkgrey);
-  margin-bottom: 0.5rem;
 }
 
-nav {
+nav ul {
   display: flex;
   flex-direction: column;
   color: var(--color-black);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
 }
-nav li {
+nav ul:last-of-type {
+  margin-bottom: 0;
+}
+nav ul li {
   display: flex;
   border-top: 1px solid var(--color-lightgrey);
   background-color: var(--color-white);
 }
-nav li::marker {
+nav ul li::marker {
   content: "";
 }
-nav li:first-of-type {
+nav ul li:first-child {
   border-top: none;
   border-radius: 8px 8px 0 0;
 }
-nav li:last-of-type {
+nav ul li:last-child {
   border-radius: 0 0 8px 8px;
 }
-nav li a {
+nav ul li:only-child {
+  border-radius: 8px;
+}
+nav ul li a {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   padding: 0.35rem 0.5rem;
   text-decoration: none;
-}
-nav li a:visited {
   color: inherit;
 }
-nav li a i {
+nav ul li a:visited {
+  color: inherit;
+}
+nav ul li a i {
   background-color: var(--color-black);
-  font-size: 0.95em;
+  font-size: 0.85em;
   color: var(--color-white);
-  padding: 0.25rem;
+  padding: 0.35rem;
   border-radius: 6px;
   margin-right: 0.75rem;
-  min-width: 1.5rem;
-  width: 1.5rem;
-  max-width: 1.5rem;
+  min-width: 1.6rem;
+  width: 1.6rem;
+  max-width: 1.6rem;
 }
-nav li:hover, nav li:focus-visible {
-  background-color: var(--color-darkgrey);
+nav ul li:hover, nav ul li:focus-visible {
+  background-color: var(--color-grey);
 }
-nav .fa-key {
+nav ul .fa-key {
+  background-color: var(--color-icon-grey);
+}
+nav ul .fa-lock-open {
   background-color: var(--color-icon-blue);
 }
-nav .fa-lock-open {
+nav ul .fa-headset {
+  background-color: var(--color-icon-red);
+}
+nav ul .fa-phone {
   background-color: var(--color-icon-green);
 }
-nav .fa-headset {
-  background-color: var(--color-icon-red);
+
+.nav-ul-caption {
+  font-size: 0.8rem;
+  line-height: 0.85rem;
+  color: var(--color-darkgrey);
+  margin-top: 0.4rem;
+  margin-left: 1rem;
+}
+.nav-ul-caption-pre {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.header-span {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-grey);
+}
+.header-span img {
+  margin-right: 1rem;
+}
+
+footer {
+  font-size: 0.9rem;
 }/*# sourceMappingURL=main.css.map */

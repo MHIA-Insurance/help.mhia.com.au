@@ -4,8 +4,9 @@
 :root {
     /* Colors */
     --color-black: hsl(0, 0%, 0%);
+    --color-darkgrey: hsl(240, 6%, 50%);
+    --color-grey: hsl(240, 6%, 83%);
     --color-lightgrey: hsl(240, 24%, 96%);
-    --color-darkgrey: hsl(240, 6%, 83%);
     --color-white: hsl(0, 0%, 100%);
     --color-icon-grey: hsl(240, 2%, 56%);
     --color-icon-red: hsl(6, 90%, 58%);
@@ -30,7 +31,7 @@ img {
 }
 
 html {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.15;
     position: relative;
@@ -52,74 +53,120 @@ p {
 
 h1{
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    border-bottom: 2px solid var(--color-darkgrey);
-    margin-bottom: 0.5rem;
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    color: var(--color-black);
 
-    li {
+    ul {
         display: flex;
-        border-top: 1px solid var(--color-lightgrey);
-        background-color: var(--color-white);
-
-        &::marker {
-            content: '';
-        }
-
-        &:first-of-type {
-            border-top: none;
-            border-radius: 8px 8px 0 0;
-        }
+        flex-direction: column;
+        color: var(--color-black);
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
 
         &:last-of-type {
-            border-radius: 0 0 8px 8px;
+            margin-bottom: 0;
         }
-
-        a {
+    
+        li {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            padding: 0.35rem 0.5rem;
-            text-decoration: none;
+            border-top: 1px solid var(--color-lightgrey);
+            background-color: var(--color-white);
+    
+            &::marker {
+                content: '';
+            }
+    
+            &:first-child {
+                border-top: none;
+                border-radius: 8px 8px 0 0;
+            }
+    
+            &:last-child{
+                border-radius: 0 0 8px 8px;
+            }
 
-            &:visited {
+            &:only-child {
+                border-radius: 8px;
+            }
+    
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                padding: 0.35rem 0.5rem;
+                text-decoration: none;
                 color: inherit;
+    
+                &:visited {
+                    color: inherit;
+                }
+    
+                i {
+                    background-color: var(--color-black);
+                    font-size: 0.85em;
+                    color: var(--color-white);
+                    padding: 0.35rem;
+                    border-radius: 6px;
+                    margin-right: 0.75rem;
+                    min-width: 1.6rem;
+                    width: 1.6rem;
+                    max-width: 1.6rem;
+                }
             }
-
-            i {
-                background-color: var(--color-black);
-                font-size: 0.95em;
-                color: var(--color-white);
-                padding: 0.25rem;
-                border-radius: 6px;
-                margin-right: 0.75rem;
-                min-width: 1.5rem;
-                width: 1.5rem;
-                max-width: 1.5rem;
+            
+            &:hover, &:focus-visible {
+                background-color: var(--color-grey);
             }
         }
-        
-        &:hover, &:focus-visible {
-            background-color: var(--color-darkgrey);
+    
+        .fa-key {
+            background-color: var(--color-icon-grey);
+        }
+    
+        .fa-lock-open {
+            background-color: var(--color-icon-blue);
+        }
+    
+        .fa-headset {
+            background-color: var(--color-icon-red);
+        }
+    
+        .fa-phone {
+            background-color: var(--color-icon-green);
         }
     }
+}
 
-    .fa-key {
-        background-color: var(--color-icon-blue);
+.nav-ul-caption {
+    font-size: 0.8rem;
+    line-height: 0.85rem;
+    color: var(--color-darkgrey);
+    margin-top: 0.4rem;
+    margin-left: 1rem;
+    
+    &-pre {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 0.25rem;
     }
+}
 
-    .fa-lock-open {
-        background-color: var(--color-icon-green);
-    }
+.header-span {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-grey);
 
-    .fa-headset {
-        background-color: var(--color-icon-red);
+    img {
+        margin-right: 1rem;
     }
+}
+
+footer {
+    font-size: 0.9rem;
 }
