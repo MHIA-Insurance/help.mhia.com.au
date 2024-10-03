@@ -39,6 +39,7 @@ html {
 }
 
 body {
+    touch-action:none;
     font-family: var(--font-body);
     background-color: var(--color-lightgrey);
     color: var(--color-black);
