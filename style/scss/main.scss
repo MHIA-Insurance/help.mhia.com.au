@@ -114,6 +114,10 @@ nav {
                 &:visited {
                     color: inherit;
                 }
+
+                &:focus-visible {
+                    z-index: 2;
+                }
     
                 i {
                     background-color: var(--color-black);
@@ -128,7 +132,7 @@ nav {
                 }
             }
             
-            &:hover, &:focus-visible {
+            &:active {
                 background-color: var(--color-grey);
             }
         }
