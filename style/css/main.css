@@ -75,7 +75,7 @@ dialog::backdrop {
   --color-menu-bg: hsl(0, 0%, 100%);
   --color-menu-bg-active: hsl(240, 6%, 83%);
   --color-menu-text: hsl(0, 0%, 0%);
-  --color-menu-divider: hsl(240, 6%, 87%);
+  --color-menu-divider: hsl(240, 6%, 83%);
   --color-menu-caption: hsl(240, 6%, 50%);
   /* Icon colours */
   --color-icon-fg: hsl(0, 0%, 100%);
@@ -102,7 +102,7 @@ dialog::backdrop {
     --color-menu-bg: hsl(240, 6%, 14%);
     --color-menu-bg-active: hsl(240, 6%, 31%);
     --color-menu-text: hsl(240, 24%, 96%);
-    --color-menu-divider: hsl(240, 6%, 22%);
+    --color-menu-divider: hsl(240, 6%, 31%);
     --color-menu-caption: hsl(240, 6%, 50%);
   }
 }
