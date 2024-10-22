@@ -236,7 +236,7 @@ nav ul .fa-plug-circle-xmark {
 }
 
 .nav-ul-caption {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 0.95rem;
   color: var(--color-menu-caption);
   margin-top: 0.4rem;
@@ -245,7 +245,7 @@ nav ul .fa-plug-circle-xmark {
 }
 .nav-ul-caption-pre {
   text-transform: uppercase;
-  font-size: 0.8 0.5rem;
+  font-size: 0.75rem;
   margin-bottom: 0.25rem;
 }
 
