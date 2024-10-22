@@ -2,6 +2,10 @@
   padding: 2rem 0;
 }
 
+.menu-section {
+  padding: 0;
+}
+
 .container {
   max-width: 430px;
   padding: 0 1rem;
@@ -9,14 +13,73 @@
   position: relative;
 }
 
+dialog {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 95%;
+  max-width: 398px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: none;
+  border-radius: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+dialog::backdrop {
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+dialog h2 {
+  margin-bottom: 0.85rem;
+}
+dialog button {
+  border: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  background-color: hsl(0, 0%, 88%);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+dialog button i {
+  font-size: 1.125rem;
+}
+dialog button:hover {
+  cursor: pointer;
+}
+dialog button:hover, dialog button:focus {
+  color: black;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  dialog {
+    color: var(--color-menu-text);
+    background-color: var(--color-menu-bg);
+  }
+}
 :root {
-  /* Colors */
-  --color-black: hsl(0, 0%, 0%);
-  --color-darkgrey: hsl(240, 6%, 50%);
-  --color-grey: hsl(240, 6%, 83%);
-  --color-lightgrey: hsl(240, 24%, 96%);
-  --color-white: hsl(0, 0%, 100%);
-  --color-icon-grey: hsl(240, 2%, 56%);
+  /* Page colours */
+  --color-page-bg: hsl(240, 24%, 96%);
+  --color-page-text: hsl(0, 0%, 0%);
+  /* Menu colours */
+  --color-menu-bg: hsl(0, 0%, 100%);
+  --color-menu-bg-active: hsl(240, 6%, 83%);
+  --color-menu-text: hsl(0, 0%, 0%);
+  --color-menu-divider: hsl(240, 6%, 87%);
+  --color-menu-caption: hsl(240, 6%, 50%);
+  /* Icon colours */
+  --color-icon-fg: hsl(0, 0%, 100%);
+  --color-icon-bg: hsl(240, 2%, 56%);
+  --color-icon-black: hsl(0, 0%, 0%);
   --color-icon-red: hsl(6, 90%, 58%);
   --color-icon-green: hsl(121, 55%, 58%);
   --color-icon-blue: hsl(219, 95%, 58%);
@@ -25,6 +88,19 @@
   --font-heading: "Red Hat Display", sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Page colours */
+    --color-page-bg: hsl(0, 0%, 0%);
+    --color-page-text: hsl(240, 24%, 96%);
+    /* Menu colours */
+    --color-menu-bg: hsl(240, 6%, 14%);
+    --color-menu-bg-active: hsl(240, 6%, 31%);
+    --color-menu-text: hsl(240, 24%, 96%);
+    --color-menu-divider: hsl(240, 6%, 22%);
+    --color-menu-caption: hsl(240, 6%, 50%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -48,8 +124,8 @@ html {
 body {
   touch-action: none;
   font-family: var(--font-body);
-  background-color: var(--color-lightgrey);
-  color: var(--color-black);
+  background-color: var(--color-page-bg);
+  color: var(--color-page-text);
   position: relative;
   overflow-x: hidden !important;
   min-height: 100dvh;
@@ -61,7 +137,7 @@ p {
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -76,7 +152,7 @@ a:visited {
 nav ul {
   display: flex;
   flex-direction: column;
-  color: var(--color-black);
+  color: var(--color-menu-text);
   font-size: 1.125rem;
   margin-bottom: 2rem;
 }
@@ -85,8 +161,8 @@ nav ul:last-of-type {
 }
 nav ul li {
   display: flex;
-  border-top: 1px solid var(--color-lightgrey);
-  background-color: var(--color-white);
+  border-top: 1px solid var(--color-menu-divider);
+  background-color: var(--color-menu-bg);
 }
 nav ul li::marker {
   content: "";
@@ -118,21 +194,23 @@ nav ul li a:focus-visible {
   z-index: 2;
 }
 nav ul li a i {
-  background-color: var(--color-black);
+  background-color: var(--color-page-text);
   font-size: 0.85em;
-  color: var(--color-white);
+  color: var(--color-icon-fg);
   padding: 0.35rem;
   border-radius: 6px;
   margin-right: 0.75rem;
   min-width: 1.6rem;
   width: 1.6rem;
   max-width: 1.6rem;
+  display: flex !important;
+  justify-content: center;
 }
 nav ul li:active {
-  background-color: var(--color-grey);
+  background-color: var(--color-menu-bg-active);
 }
 nav ul .fa-key {
-  background-color: var(--color-icon-grey);
+  background-color: var(--color-icon-bg);
 }
 nav ul .fa-lock-open {
   background-color: var(--color-icon-blue);
@@ -143,11 +221,15 @@ nav ul .fa-headset {
 nav ul .fa-phone {
   background-color: var(--color-icon-green);
 }
+nav ul .fa-plug-circle-xmark {
+  background-color: var(--color-icon-black);
+  box-shadow: inset 0px 0px 0px 0.5px var(--color-icon-bg);
+}
 
 .nav-ul-caption {
   font-size: 0.8rem;
   line-height: 0.85rem;
-  color: var(--color-darkgrey);
+  color: var(--color-menu-caption);
   margin-top: 0.4rem;
   margin-left: 0.6rem;
   margin-right: 0.6rem;
@@ -162,13 +244,33 @@ nav ul .fa-phone {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-grey);
+  padding: 1rem;
+  background-color: var(--color-menu-bg);
+  border-radius: 8px;
 }
-.header-span img {
+.header-span > img {
   margin-right: 1rem;
+}
+.header-span > div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.header-span > div p {
+  font-size: 0.85rem;
+  line-height: 0.85rem;
+  margin-top: 0.25rem;
+  color: var(--color-menu-caption);
+}
+.header-span .fa-circle-info {
+  font-size: 1.5rem;
+  color: var(--color-icon-blue);
 }
 
 footer {
   font-size: 0.9rem;
+}
+footer img {
+  margin: 1rem auto 0 auto;
+  filter: opacity(0.35) grayscale(0.85);
 }/*# sourceMappingURL=main.css.map */
