@@ -87,6 +87,10 @@ dialog::backdrop {
   /* Fonts */
   --font-body: "Roboto", sans-serif;
   --font-heading: "Red Hat Display", sans-serif;
+  /* Borders */
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px ;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,7 +166,7 @@ nav ul:last-of-type {
 }
 nav ul li {
   display: flex;
-  border-top: 1px solid var(--color-menu-divider);
+  border-top: 0.5px solid var(--color-menu-divider);
   background-color: var(--color-menu-bg);
 }
 nav ul li::marker {
@@ -170,15 +174,19 @@ nav ul li::marker {
 }
 nav ul li:first-child {
   border-top: none;
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 }
 nav ul li:last-child {
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+}
+nav ul li:last-child a::before {
+  display: none;
 }
 nav ul li:only-child {
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
 }
 nav ul li a {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -207,11 +215,21 @@ nav ul li a i {
   display: flex !important;
   justify-content: center;
 }
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  width: calc(1rem + 29.9px + 0.85rem + 0.05rem);
+  background-color: var(--color-menu-bg);
+  z-index: 3;
+}
 nav ul li a::after {
   content: "\f054";
   font-family: "Font Awesome 6 Pro";
   position: absolute;
-  right: 2rem;
+  right: 1rem;
   font-size: 0.85rem;
   color: var(--color-icon-bg);
 }
@@ -255,7 +273,7 @@ nav ul .fa-plug-circle-xmark {
   flex-direction: row;
   padding: 1rem;
   background-color: var(--color-menu-bg);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
 }
 .header-span > img {
   margin-right: 1rem;
@@ -266,8 +284,8 @@ nav ul .fa-plug-circle-xmark {
   flex-grow: 1;
 }
 .header-span > div p {
-  font-size: 0.85rem;
-  line-height: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 0.95rem;
   margin-top: 0.25rem;
   color: var(--color-menu-caption);
 }

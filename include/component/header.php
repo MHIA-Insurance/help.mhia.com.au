@@ -13,7 +13,7 @@
                 <p>Please report any issues by submitting a ticket.</p>
                 <button autofocus><i class="fas fa-xmark" aria-hidden="true"></i></button>
             </dialog>
-            <a class="button" href="javascript:void(0);"><i class="fa fa-regular fa-circle-info"></i></a>
+            <a class="button" href="javascript:void(0);"><i class="fa fa-light fa-circle-info"></i></a>
             <script src="/script/dialog.js"></script>
         </span>
     </div>
